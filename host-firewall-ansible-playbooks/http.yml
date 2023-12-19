@@ -1,0 +1,49 @@
+---
+- name: Configure iptables for HTTP hosts 
+  hosts: 172.16.21.5 172.16.21.103
+  become: yes  # Use sudo to execute commands as root
+  tasks:
+- name: Set default policies to DROP
+  shell: iptables -P INPUT DROP
+  ignore_errors: yes
+
+- name: Set default policies to DROP
+  shell: iptables -P OUTPUT DROP
+  ignore_errors: yes
+- name: Set default policies to DROP
+  shell: iptables -P FORWARD DROP
+  ignore_errors: yes
+- name: Set default policies to DROP
+  shell: iptables -P FORWARD DROP
+  ignore_errors: yes
+
+- name: statefull connections
+  shell:  iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+  ignore_errors: yes
+
+- name: statefull connections
+  shell:  iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT
+  ignore_errors: yes
+  
+- name: Allow incoming HTTP traffic 
+  shell: iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+  ignore_errors: yes
+- name: Allow incoming HTTP traffic  
+  shell: iptables -A OUTPUT -p tcp --sport 80 -j ACCEPT
+  ignore_errors: yes
+- name: Allow SSH
+  shell: iptables -A INPUT -p tcp --dport 22 -s 172.16.21.80/28 -j ACCEPT
+  ignore_errors: yes
+- name: Allow SSH
+  shell: iptables -A INPUT -p tcp --sport 22 -j ACCEPT
+  ignore_errors: yes
+- name: Allow forwarding of HTTP traffic  
+  shell: iptables -I FORWARD -p tcp --dport 80 -j ACCEPT
+  ignore_errors: yes
+- name: Allow forwarding of HTTP traffic  
+  shell: iptables -I FORWARD -p tcp --sport 80 -j ACCEPT
+  ignore_errors: yes
+
+- name: Allow ICMP
+  shell: iptables -A INPUT -p icmp -j ACCEPT && iptables -A OUTPUT -p icmp -j ACCEPT
+  ignore_errors: yes

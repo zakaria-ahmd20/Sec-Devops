@@ -1,0 +1,64 @@
+---
+- name: Configure iptables for http server
+  hosts: webservers 
+  become: yes  # Use sudo to execute commands as root
+
+  tasks:
+ 
+    - name: statefull connections
+      shell:  iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+      ignore_errors: yes
+
+    - name: statefull connections
+      shell:  iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT
+      ignore_errors: yes
+      
+    - name: Allow incoming http traffic   
+      shell: iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+      ignore_errors: yes
+      
+    - name: Allow incoming source http traffic   
+      shell: iptables -A OUTPUT -p tcp --sport 80 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow loopback traffic
+      shell: iptables -A INPUT -i lo -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow loopback traffic
+      shell: iptables -A INPUT -i lo -j ACCEPT
+      ignore_errors: yes
+  
+    - name: Allow forwarding of http  d traffic (tp`)
+      shell: iptables -I FORWARD -p tcp --dport 80 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow forwarding of http  s traffic (tp`)
+      shell: iptables -I FORWARD -p tcp --sport 80 -j ACCEPT
+      ignore_errors: yes
+
+
+    - name: Allow SSH
+      shell: iptables -A INPUT -p tcp --dport 22  -j ACCEPT
+      ignore_errors: yes
+    - name: Allow SSH
+      shell: iptables -A INPUT -p tcp --sport 22 -j ACCEPT
+      ignore_errors: yes
+    - name: Allow ICMP (Ping)
+      shell: iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT && iptables -A OUTPUT -p icmp --icmp-type echo-reply -j ACCEPT
+      ignore_errors: yes
+
+  
+    - name: Set default policies to DROP
+      shell: iptables -P INPUT DROP
+      ignore_errors: yes
+
+    - name: Set default policies to DROP
+      shell: iptables -P OUTPUT DROP
+      ignore_errors: yes
+    - name: Set default policies to DROP
+      shell: iptables -P FORWARD DROP
+      ignore_errors: yes
+    - name: Save
+      shell: iptables-save > /etc/sysconfig/iptables 
+      ignore_errors: yes

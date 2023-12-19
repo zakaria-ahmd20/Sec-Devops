@@ -1,0 +1,110 @@
+---
+- name: Configure iptables for DNS server
+  hosts: lan2
+  become: yes  # Use sudo to execute commands as root
+
+  tasks:
+ 
+    - name: statefull connections
+      shell:  iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+      ignore_errors: yes
+
+    - name: statefull connections
+      shell:  iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT
+      ignore_errors: yes
+      
+    - name: Allow incoming DNS traffic (UDP)
+      shell: iptables -A INPUT -p udp --dport 53 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow incoming DNS traffic (TCP)
+      shell: iptables -A INPUT -p tcp --dport 53 -j ACCEPT
+      ignore_errors: yes
+      
+    - name: Allow incoming source DNS traffic (TCP)
+      shell: iptables -A OUTPUT -p tcp --sport 53 -j ACCEPT
+      ignore_errors: yes
+    - name: Allow incoming source DNS traffic (UDP)
+      shell: iptables -A OUTPUT -p udp --sport 53 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow loopback traffic
+      shell: iptables -A INPUT -i lo -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow loopback traffic
+      shell: iptables -A INPUT -i lo -j ACCEPT
+      ignore_errors: yes
+  
+    - name: Allow SSH
+      shell: iptables -A INPUT -p tcp --dport 22 -s 172.16.21.80/28 -j ACCEPT
+      ignore_errors: yes
+    - name: Allow SSH
+      shell: iptables -A INPUT -p tcp --sport 22 -j ACCEPT
+      ignore_errors: yes
+    - name: Allow ICMP
+      shell: iptables -A INPUT -p icmp -j ACCEPT && iptables -A OUTPUT -p icmp -j ACCEPT
+      ignore_errors: yes
+    - name: Allow ICMP
+      shell: iptables -A INPUT -p icmp -j ACCEPT && iptables -A OUTPUT -p icmp -j ACCEPT
+      ignore_errors: yes
+    
+    - name: Allow incoming HTTP traffic (TCP)
+      shell: iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow outgoing HTTP traffic (TCP)
+      shell: iptables -A OUTPUT -p tcp --sport 80 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow incoming RTC (UDP)
+      shell: iptables -A INPUT -p udp --dport 8443 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow outgoing RTC (UDP)
+      shell: iptables -A OUTPUT -p udp --sport 8443 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow incoming RTC (TCP)
+      shell: iptables -A INPUT -p tcp --dport 8443 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow outgoing RTC (TCP)
+      shell: iptables -A OUTPUT -p tcp --sport 8443 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow incoming API (rtcd) (TCP)
+      shell: iptables -A INPUT -p tcp --dport 8045 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow outgoing API (rtcd) (TCP)
+      shell: iptables -A OUTPUT -p tcp --sport 8045 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow outgoing STUN (UDP)
+      shell: iptables -A OUTPUT -p udp --dport 3478 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow incoming STUN (UDP)
+      shell: iptables -A INPUT -p udp --sport 3478 -j ACCEPT
+      ignore_errors: yes
+    - name: Allow incoming Port 8080 (TCP)
+      shell: iptables -A INPUT -p tcp --dport 8080 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow outgoing Port 8080 (TCP)
+      shell: iptables -A OUTPUT -p tcp --sport 8080 -j ACCEPT
+      ignore_errors: yes
+    - name: Set default policies to DROP
+      shell: iptables -P INPUT DROP
+      ignore_errors: yes
+
+    - name: Set default policies to DROP
+      shell: iptables -P OUTPUT DROP
+      ignore_errors: yes
+    - name: Set default policies to DROP
+      shell: iptables -P FORWARD DROP
+      ignore_errors: yes
+    - name: Save
+      shell: iptables-save 
+      ignore_errors: yes

@@ -1,0 +1,88 @@
+---
+- name: Configure iptables for DNS server and HTTPS reverse proxy
+  hosts: publicdns
+  become: yes  # Use sudo to execute commands as root
+  tasks:
+    - name: Allow established and related connections
+      shell: iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow outgoing established connections
+      shell: iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow incoming DNS traffic (UDP)
+      shell: iptables -A INPUT -p udp --dport 53 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow incoming DNS traffic (TCP)
+      shell: iptables -A INPUT -p tcp --dport 53 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow outgoing DNS traffic (TCP and UDP)
+      shell: |
+        iptables -A OUTPUT -p tcp --dport 53 -j ACCEPT
+        iptables -A OUTPUT -p udp --dport 53 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow loopback traffic
+      shell: iptables -A INPUT -i lo -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow forwarding of DNS traffic (UDP)
+      shell: iptables -I FORWARD -p udp --dport 53 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow forwarding of DNS traffic (TCP)
+      shell: iptables -I FORWARD -p tcp --dport 53 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow SSH
+      shell: iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow outgoing SSH
+      shell: iptables -A OUTPUT -p tcp --dport 22 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow ICMP (INPUT)
+      shell: iptables -A INPUT -p icmp -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow ICMP (OUTPUT)
+      shell: iptables -A OUTPUT -p icmp -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow incoming HTTP traffic (TCP port 80)
+      shell: iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow outgoing HTTP traffic (TCP port 80)
+      shell: iptables -A OUTPUT -p tcp --dport 80 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow incoming HTTPS traffic (TCP port 443)
+      shell: iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Allow outgoing HTTPS traffic (TCP port 443)
+      shell: iptables -A OUTPUT -p tcp --dport 443 -j ACCEPT
+      ignore_errors: yes
+
+    - name: Set default policies to DROP
+      shell: iptables -P INPUT DROP
+      ignore_errors: yes
+
+    - name: Set default policies to DROP
+      shell: iptables -P OUTPUT DROP
+      ignore_errors: yes
+
+    - name: Set default policies to DROP
+      shell: iptables -P FORWARD DROP
+      ignore_errors: yes
+
+    - name: Save iptables rules
+      shell: iptables-save > /etc/iptables/rules.v4
+      ignore_errors: yes  # Ensure that my DNS server and HTTP/HTTPS reverse proxy work
+
+  
