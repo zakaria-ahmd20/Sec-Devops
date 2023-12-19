@@ -23,10 +23,10 @@ Description of your project goes here.
   </tr>
   <tr>
     <!-- Tool 2 -->
-    <td align="center">GitHub</td>
+    <td align="center">PFsense</td>
     <!-- Logo 2 -->
     <td align="center">
-      <img src="https://example.com/github-logo.png" alt="GitHub Logo" width="50">
+      <img src="https://wpcomputersolutions.com/wp-content/uploads/2018/07/pfsense-logo-e1534531558807.png" alt="PFsense Logo" width="50">
     </td>
   </tr>
   <!-- Add more rows for additional tools -->
