@@ -55,7 +55,7 @@ Description of your project goes here.
     <!-- More Tools -->
     <td align="center">
       <b>And Other Tools</b><br>
-      <i>tools such as AD etc....</i>
+      
     </td>
     <!-- Add more columns for additional tools -->
   </tr>
