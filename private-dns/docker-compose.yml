@@ -1,0 +1,23 @@
+version: '3'
+services:
+  bind9:
+    container_name: dns-demo2
+    image: ubuntu/bind9:latest
+    environment:
+      - BIND9_USER=root
+      - TZ=America/New_York
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+    volumes:
+      - ./config:/etc/bind
+      - ./cache:/var/cache/bind
+      - ./records:/var/lib/bind
+    networks:
+      ADVLAN:
+        ipv4_address: 172.16.2.91  # Specify the desired IPv4 address for the container
+
+networks:
+  ADVLAN:
+    external:
+      name: ADVLAN

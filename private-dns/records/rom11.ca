@@ -1,0 +1,28 @@
+$TTL 3D
+@ IN SOA dns.rom11.ca. hostmaster.rom11.ca. (
+    2023113001 ; Serial
+    8H         ; Refresh
+    2H         ; Retry
+    1W         ; Expire
+    1D         ; Negative Cache TTL
+);
+
+@      IN NS dns.rom11.ca.
+ns     IN A  172.16.2.91
+
+; -- DNS records
+
+cms    IN A  172.16.2.50
+ad     IN A  172.16.2.90
+pdns   IN A  172.16.2.91
+log    IN A  172.16.2.35
+hr     IN A  172.16.2.34
+poss   IN A  172.16.2.162
+ntp    IN A  172.16.2.106
+jbx    IN A  172.16.2.82
+br     IN A  172.16.2.97
+ir     IN A  172.16.2.33
+proxy  IN A  172.16.2.85
+dns    IN A  172.16.2.91
+
+
