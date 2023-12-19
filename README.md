@@ -2,25 +2,6 @@
 
 Description of your project goes here.
 
-
-# Project Title
-
-Description of your project goes here.
-
-
-
-<!-- Create a horizontal table with columns for Tool and Logo -->
-# Project Title
-
-Description of your project goes here.
-
-## Tools Used
-
-<!-- Create a horizontal table with columns for Tool and Logo -->
-# Project Title
-
-Description of your project goes here.
-
 ## Tools Used
 
 <!-- Create a horizontal table with columns for Tool and Logo -->
@@ -60,6 +41,21 @@ Description of your project goes here.
     <td align="center">
       <b>IPTABLES</b><br>
       <img src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/197769387/original/9ee0d0038ee242fcc30aa3a67b88cc39ec69ac9c/configure-iptables-firewall-and-rules.jpeg" alt="IPTABLES Logo" width="50">
+    </td>
+    <!-- Tool 8 -->
+    <td align="center">
+      <b>OPENVAS</b><br>
+      <img src="https://community.greenbone.net/uploads/default/original/1X/45982934a730d1824bc403f78875b77a8dfc1ae0.png" alt="OPENVAS Logo" width="50">
+    </td>
+    <!-- Tool 9 -->
+    <td align="center">
+      <b>BASH</b><br>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Bash_Logo_Colored.svg/2048px-Bash_Logo_Colored.svg.png" alt="BASH Logo" width="50">
+    </td>
+    <!-- More Tools -->
+    <td align="center">
+      <b>More Tools</b><br>
+      <i>Feel free to add more tools here...</i>
     </td>
     <!-- Add more columns for additional tools -->
   </tr>
