@@ -36,7 +36,7 @@ Description of your project goes here.
     <!-- Tool 5 -->
     <td align="center">
       <b>Modsecurity</b><br>
-      <img src="https://www.pngfind.com/pngs/m/32-320643_parent-directory-apache-mod-security-hd-png-download.png" alt="MOD Logo" width="50">
+      <img src="https://miro.medium.com/v2/resize:fit:786/format:webp/0*oMZ0Tl09oe0-FlRy.jpg" alt="MOD Logo" width="50">
     </td>
     <!-- Add more columns for additional tools -->
   </tr>
