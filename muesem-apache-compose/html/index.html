@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Ontario Museum</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Royal Ontario Museum</h1>
+    </header>
+
+    <nav>
+        <a href="#welcome">Welcome</a>
+        <a href="#exhibits">Exhibits</a>
+        <a href="#events">Events</a>
+        <a href="#membership">Membership</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="welcome">
+        <h2>We’re Open Today 10:00 am to 5:30 pm
+        </h2>
+        <p>Experience the magic of history and discovery at the Royal Ontario Museum. Explore fascinating exhibits, attend engaging events, and join our exclusive membership for a deeper connection to the world of wonders.</p>
+    </section>
+
+    <section id="exhibits">
+        <h2>Exhibits</h2>
+        <div class="exhibit" onclick="showDetails('Exhibit Title 1', 'This exhibit showcases the history of ancient dinos.', 'img/img1.jpg')">
+            <img src="img/img1.jpg" alt="Exhibit 1" class="small-image">
+            <h3>Exhibit Title 1</h3>
+            <p>This exhibit showcases the history of ancient dinos.</p>
+            <a href="#" onclick="showDetails('Exhibit Title 1', 'This exhibit showcases the history of ancient dinos.', 'img/img1.jpg')">Learn More</a>
+        </div>
+
+        <div class="exhibit" onclick="showDetails('Exhibit Title 2', 'Explore the mysteries of the natural world in this exhibit.', 'img/img2.jpg')">
+            <img src="img/img2.jpg" alt="Exhibit 2" class="small-image">
+            <h3>Exhibit Title 2</h3>
+            <p>Explore the mysteries of the natural world in this exhibit.</p>
+            <a href="#" onclick="showDetails('Exhibit Title 2', 'Explore the mysteries of the natural world in this exhibit.', 'img/img2.jpg')">Learn More</a>
+        </div>
+       
+    </section>
+
+    <section id="events">
+        <h2>Events</h2>
+        <p>Immerse yourself in captivating events that bring history to life:</p>
+        <ul>
+            <li><strong>Lecture Series:</strong> Join renowned experts as they delve into the depths of ancient civilizations and share their insights.</li>
+            <li><strong>Night at the Museum:</strong> Experience the ROM in a new light with our special after-hours events featuring live music, food, and exploration.</li>
+            <li><strong>Hands-On Workshops:</strong> Engage with history through interactive workshops, where you can create and learn alongside our experts.</li>
+        </ul>
+    </section>
+
+    <section id="membership">
+        <h2>Membership</h2>
+        <p>Become a member to unlock exclusive benefits, including VIP access to events, behind-the-scenes tours, and discounts at the museum store.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Learn about the history and mission of the Royal Ontario Museum.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Reach out to us with any questions or feedback.</p>
+    </section>
+
+    <div id="detailsModal" class="modal">
+        <span class="close" onclick="hideDetails()">&times;</span>
+        <img id="modalImage" src="" alt="Exhibit Image">
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

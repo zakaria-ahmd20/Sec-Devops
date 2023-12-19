@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  apache:
+    image: httpd:latest
+    networks:
+      vlan-ecm:
+        ipv4_address: 172.16.21.100
+    ports:
+      - "8080:80"  # Correct indentation here
+    restart: always
+    volumes:
+      - ./html:/usr/local/apache2/htdocs
+networks:
+  vlan-ecm:
+    external: true
