@@ -1,6 +1,3 @@
-![ProjectDiagramV2 0 drawio](https://github.com/zakaria-ahmd20/Sec-Devops/assets/94662829/496cfad7-9920-486e-bfb5-2fccceff942d)
-[<!-- Markdown and HTML mix for a visually appealing README -->
-
 # Project Title
 
 Description of your project goes here.
@@ -29,13 +26,33 @@ Description of your project goes here.
       <img src="https://wpcomputersolutions.com/wp-content/uploads/2018/07/pfsense-logo-e1534531558807.png" alt="PFsense Logo" width="50">
     </td>
   </tr>
-  <!-- Add more rows for additional tools -->
-</table>](https://wpcomputersolutions.com/wp-content/uploads/2018/07/pfsense-logo-e1534531558807.png)https://wpcomputersolutions.com/wp-content/uploads/2018/07/pfsense-logo-e1534531558807.png
   <!-- Tool 3 -->
+  <tr>
     <td align="center">Docker</td>
     <!-- Logo 3 -->
     <td align="center">
       <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png" alt="Docker Logo" width="50">
     </td>
   </tr>
+  <!-- Repeat the structure for additional tools -->
+  <!-- Tool 4 -->
+  <tr>
+    <td align="center">NGINX</td>
+    <!-- Logo 4 -->
+    <td align="center">
+      <img src="https://destatic.blob.core.windows.net/images/nginx.png" alt="Tool 4 Logo" width="50">
+    </td>
+  </tr>
+  <!-- Add more rows for additional tools -->
+</table>
+  <!-- Tool 5 -->
+  <tr>
+    <td align="center">APACHE</td>
+    <!-- Logo 5 -->
+    <td align="center">
+      <img src="https://banner2.cleanpng.com/20180519/vxe/kisspng-apache-tomcat-apache-http-server-web-server-java-s-5b0036cb6ea219.5097810415267406834532.jpg" alt="Tool 5 Logo" width="50">
+    </td>
+  </tr>
+  <!-- Add more rows for additional tools -->
+</table>
 
