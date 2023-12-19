@@ -2,13 +2,12 @@
 
 Description of your project goes here.
 
-## Tools Used
 
 # Project Title
 
 Description of your project goes here.
 
-## Tools Used
+
 
 <!-- Create a horizontal table with columns for Tool and Logo -->
 # Project Title
