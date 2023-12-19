@@ -1,0 +1,11 @@
+$TTL    3D
+@       IN      SOA     dns.rom11.ca.      hostmaster.rom11.ca.(
+                2018042901       ; Serial
+                8H      ; Refresh
+                2H      ; Retry
+                1W      ; Expire
+                1D      ; Negative Cache TTL
+);
+@       IN      NS      hostmaster.rom11.ca.
+121       IN      PTR     hostmaster.rom11.ca.
+122       IN      PTR     email.rom11.ca.
