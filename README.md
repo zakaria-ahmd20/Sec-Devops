@@ -1,5 +1,5 @@
 ![ProjectDiagramV2 0 drawio](https://github.com/zakaria-ahmd20/Sec-Devops/assets/94662829/496cfad7-9920-486e-bfb5-2fccceff942d)
-<!-- Markdown and HTML mix for a visually appealing README -->
+[<!-- Markdown and HTML mix for a visually appealing README -->
 
 # Project Title
 
@@ -30,4 +30,12 @@ Description of your project goes here.
     </td>
   </tr>
   <!-- Add more rows for additional tools -->
-</table>
+</table>](https://wpcomputersolutions.com/wp-content/uploads/2018/07/pfsense-logo-e1534531558807.png)https://wpcomputersolutions.com/wp-content/uploads/2018/07/pfsense-logo-e1534531558807.png
+  <!-- Tool 3 -->
+    <td align="center">Docker</td>
+    <!-- Logo 3 -->
+    <td align="center">
+      <img src="https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png" alt="Docker Logo" width="50">
+    </td>
+  </tr>
+
