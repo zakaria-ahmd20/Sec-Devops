@@ -18,6 +18,13 @@ Description of your project goes here.
 ## Tools Used
 
 <!-- Create a horizontal table with columns for Tool and Logo -->
+# Project Title
+
+Description of your project goes here.
+
+## Tools Used
+
+<!-- Create a horizontal table with columns for Tool and Logo -->
 <table>
   <tr>
     <!-- Tool 1 -->
@@ -53,6 +60,9 @@ Description of your project goes here.
     <!-- Tool 7 -->
     <td align="center">
       <b>IPTABLES</b><br>
-      <img src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/197769387/original/9ee0d0038ee242fcc30aa3a
-
+      <img src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/197769387/original/9ee0d0038ee242fcc30aa3a67b88cc39ec69ac9c/configure-iptables-firewall-and-rules.jpeg" alt="IPTABLES Logo" width="50">
+    </td>
+    <!-- Add more columns for additional tools -->
+  </tr>
+</table>
 
