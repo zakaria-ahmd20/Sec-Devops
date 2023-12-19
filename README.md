@@ -41,5 +41,21 @@ Description of your project goes here.
     <!-- Add more columns for additional tools -->
   </tr>
 </table>
+<!-- Tool 6 -->
+    <td align="center">
+      <b>ZAP</b><br>
+      <img src="https://soos.io/wp-content/uploads/2022/10/zap-logo.png" alt="ZAP Logo" width="50">
+    </td>
+    <!-- Add more columns for additional tools -->
+  </tr>
+</table>
+<!-- Tool 7 -->
+    <td align="center">
+      <b>IPTABLES</b><br>
+      <img src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/197769387/original/9ee0d0038ee242fcc30aa3a67b88cc39ec69ac9c/configure-iptables-firewall-and-rules.jpeg" alt="ZAP Logo" width="50">
+    </td>
+    <!-- Add more columns for additional tools -->
+  </tr>
+</table>
 
 
