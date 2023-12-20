@@ -1,6 +1,6 @@
 # Infastructure of Royal Ontario Mueseum
 
-This project contains a Infasturcture of the popular Royal Ontario muesem created with a defense in depth approach.
+This project contains a Infasturcture of the popular Royal Ontario muesem created with a defense in depth approach , many features were automated using Docker Comopose or Ansible.
 ![ProjectDiagramV2 0 drawio](https://github.com/zakaria-ahmd20/Sec-Devops/assets/94662829/c3468187-8a29-4a0f-953f-f07b26c742cb)
 
 ## Tools Used
