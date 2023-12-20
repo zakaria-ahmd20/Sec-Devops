@@ -1,0 +1,5 @@
+SecRule REQUEST_URI "@streq /robots.txt" "id:1001,deny,msg:'directory browsing attempt'"
+SecRule REQUEST_URI "@streq /img" "id:1002,deny,msg:'directory browsing attempt'"
+SecRule REQUEST_URI "@streq /scripts.js" "id:1003,deny,msg:'directory browsing attempt'"
+SecRule REQUEST_URI "@streq /styles.css" "id:1004,deny,msg:'directory browsing attempt'"
+SecRule REQUEST_URI "@streq /sitemap.xml" "id:1005,deny,msg:'directory browsing attempt'"
