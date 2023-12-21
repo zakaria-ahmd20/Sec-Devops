@@ -52,7 +52,7 @@
     <!-- Tool 9 -->
     <td align="center">
       <b>OPENVPN</b><br>
-      <img src="https://cdn.worldvectorlogo.com/logos/openvpn-2.svg" alt="VPN Logo" width="50">
+      <img src="https://cdn.worldvectorlogo.com/logos/openvpn-2.svg" alt="OPENVAS Logo" width="50">
     </td>
     <!-- More Tools -->
     <td align="center">
