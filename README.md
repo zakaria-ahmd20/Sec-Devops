@@ -1,7 +1,12 @@
 # Infastructure of Royal Ontario Mueseum
 
 
-🏰 This project showcases a conceptual design of Royal Ontario Museum's infrastructure, with a defense-in-depth strategy. Many services were automated via Docker Compose and Ansible. The project strategically uses VLANs to  group services with similar risk profiles for enhanced security, while implementing network segmentation and access control lists to fortify network defenses and uses pfsense to control inter-VLAN communication. 🔒 Security controls from the NIST Framework further mitigate risks for essential services. Explore the project files and feel free to use them in your homelab! 🚀 Successfully deployed and tested in a simulated internet environment. 🌐
+🏰 This project showcases a conceptual design of Royal Ontario Museum's infrastructure, with a defense-in-depth strategy. Many services were automated via Docker Compose and Ansible. The project strategically uses VLANs to  group services with similar risk profiles for enhanced security, while implementing network segmentation and access control lists to fortify network defenses and uses pfsense to control inter-VLAN communication. 🔒 Security controls from the NIST Framework further mitigate risks for essential services. Explore the project files and feel free to use them in your homelab! 🚀 **Successfully deployed and tested in a simulated internet environment:.** 🌐
+- HTTPS websites and email servers
+- Public DNS servers
+- VPN server with JumbBox technologies
+- NGINX reverse proxy
+- PKI and more
 .![ProjectDiagramV2 0 drawio](https://github.com/zakaria-ahmd20/Sec-Devops/assets/94662829/c3468187-8a29-4a0f-953f-f07b26c742cb)
 
 ## Tools Used
