@@ -51,8 +51,8 @@
     </td>
     <!-- Tool 9 -->
     <td align="center">
-      <b>BASH</b><br>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Bash_Logo_Colored.svg/2048px-Bash_Logo_Colored.svg.png" alt="BASH Logo" width="50">
+      <b>OPENVPN</b><br>
+      <img src="https://cdn.worldvectorlogo.com/logos/openvpn-2.svg" alt="VPN Logo" width="50">
     </td>
     <!-- More Tools -->
     <td align="center">
