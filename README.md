@@ -8,6 +8,7 @@
 - NGINX reverse proxy
 - PKI and more
 .![ProjectDiagramV2 0 drawio](https://github.com/zakaria-ahmd20/Sec-Devops/assets/94662829/c3468187-8a29-4a0f-953f-f07b26c742cb)
+![image](https://github.com/zakaria-ahmd20/Sec-Devops/assets/94662829/1536ed98-77b6-4039-981c-e5d3891126b6)
 
 ## Tools Used
 
